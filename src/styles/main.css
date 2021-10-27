@@ -15,6 +15,19 @@ html {
   font-family: "Montserrat", sans-serif;
   color: #424242;
 }
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  background-color: #b2b1b9;
+  text-decoration: none;
+  color: black;
+  padding: 20px;
+  z-index: 100;
+}
+.skip-link:focus {
+  top: 0;
+}
 .header {
   width: 100%;
   background-color: #03031c;
@@ -174,7 +187,7 @@ footer {
   .header_title {
     padding-left: 16px;
   }
-  nav li{
+  nav li {
     padding: 16px;
   }
   .main h1 {
@@ -211,5 +224,10 @@ footer {
   }
   .restaurant_item_thumbnail {
     max-height: 300px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .hero {
+    min-width: 1000px;
   }
 }
