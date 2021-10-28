@@ -72,11 +72,13 @@ nav li {
   width: 100%;
   line-height: 24px;
   padding: 24px;
+  text-align: left;
 }
 nav a {
   text-decoration: none;
   color: #ffffff;
   font-size: 18px;
+  padding: 16px;
 }
 .hero {
   display: flex;
