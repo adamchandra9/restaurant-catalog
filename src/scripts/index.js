@@ -3,23 +3,15 @@ import '../styles/main.css';
 // eslint-disable-next-line import/extensions
 import './views/component/resto-list.js';
 
+import App from './views/app';
+
 const data = require('../DATA.json');
 
-const hamburgerElement = document.querySelector('#hamburger');
-const navElement = document.querySelector('nav');
-const heroElement = document.querySelector('.hero');
-const mainElement = document.querySelector('main');
-
-hamburgerElement.addEventListener('click', (event) => {
-  navElement.classList.add('open');
-  event.stopPropagation();
-});
-
-heroElement.addEventListener('click', () => {
-  navElement.classList.remove('open');
-});
-mainElement.addEventListener('click', () => {
-  navElement.classList.remove('open');
+const app = new App({
+  button: document.querySelector('#hamburger'),
+  drawer: document.querySelector('nav'),
+  content: document.querySelector('main'),
+  hero: document.querySelector('.hero'),
 });
 
 const maincontentElement = document.querySelector('#maincontent');
