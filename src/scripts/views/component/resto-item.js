@@ -1,6 +1,8 @@
 /* eslint linebreak-style: ["error", "windows"] */
 /* eslint no-underscore-dangle: ["error", { "allow": ["_resto"] }] */
 
+import CONFIG from '../../globals/config';
+
 class RestoItem extends HTMLElement {
   constructor() {
     super();
@@ -14,12 +16,14 @@ class RestoItem extends HTMLElement {
 
   render() {
     const {
-      pictureId, name, city, rating, description,
+      pictureId, name, city, rating, description, id,
     } = this._resto;
     this.shadowDOM.innerHTML = `
     <style>
     .restaurant_item {
       width: 100%;
+      min-height : 850px;
+      max-height : 850px;
       margin: 8px 0;
       overflow: hidden;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -50,9 +54,19 @@ class RestoItem extends HTMLElement {
     .restaurant_item_title {
       margin-bottom: 8px;
     }
+    .restaurant_item_title a {
+      text-decoration: none;
+      color: #424242;
+    }
     .restaurant_item_desc {
       font-size: 14px;
       font-weight: 500;
+    }
+    @media screen and (min-width: 400px){
+      .restaurant_item {
+        min-height : 750px;
+        max-height : 750px;
+      }
     }
     @media screen and (min-width: 700px) {
       .restaurant_item_city {
@@ -70,16 +84,22 @@ class RestoItem extends HTMLElement {
         margin-bottom: 16px;
       }
       .restaurant_item_thumbnail {
-        max-height: 300px;
+        max-height: 200px;
+      }
+    }
+    @media screen and (min-width: 1400px){
+      .restaurant_item {
+        min-height : 600px;
+        max-height : 600px;
       }
     }
     </style>
     <article class="restaurant_item">
     <div class="restaurant_item_city">${city}</div>
-    <img class="restaurant_item_thumbnail" src="${pictureId}" alt="${name}" />
+    <img class="restaurant_item_thumbnail" src="${CONFIG.BASE_IMAGE_URL}${pictureId}" alt="${name}" />
     <div class="restaurant_item_content">
-      <p class="restaurant_item_rating">${rating}</p>
-      <h2 class="restaurant_item_title">${name}</h2>
+      <p class="restaurant_item_rating">Rating: ${rating}</p>
+      <h2 class="restaurant_item_title"><a href="/#/detail/${id}">${name}</a></h2>
       <p class="restaurant_item_desc">${description}</p>
     </div>
     </article>

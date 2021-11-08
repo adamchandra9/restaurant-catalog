@@ -119,6 +119,41 @@ footer {
   font-size: 14px;
   padding: 16px 0;
 }
+#content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.restaurant_title {
+  margin-bottom: 24px;
+}
+.restaurant_poster {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 24px;
+}
+.restaurant_info p,
+.restaurant_description p {
+  font-size: 14px;
+}
+.restaurant_info h3,
+.restaurant_info p,
+.restaurant_description h3,
+.restaurant_description p {
+  margin-bottom: 8px;
+}
+#menus h4 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.containerReview {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 8px;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  border-radius: 5px;
+}
+
 @media screen and (min-width: 600px) {
   .header {
     display: grid;
@@ -151,8 +186,19 @@ footer {
   .header_title {
     padding-left: 16px;
   }
-  .main h1 {
+  main h1 {
     font-size: 32px;
+  }
+  #content {
+    grid-template-columns: auto 1fr;
+  }
+  #content .restaurant_title,
+  #content .restaurant_description {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  #content .restaurant_info {
+    padding: 16px;
   }
 }
 @media screen and (min-width: 900px) {
@@ -171,5 +217,15 @@ footer {
 @media screen and (min-width: 1200px) {
   .hero {
     min-width: 1000px;
+  }
+  #content{
+    padding: 16px;
+  }
+  .restaurant_poster{
+    max-width: 700px;
+  }
+  .restaurant_info p,
+  .restaurant_description p {
+    font-size: 16px;
   }
 }

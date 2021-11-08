@@ -3,6 +3,8 @@
 "_initialAppShell"] }] */
 
 import DrawerInitiator from '../utils/drawer-initiator';
+import UrlParser from '../routes/url-parser';
+import routes from '../routes/routes';
 
 class App {
   constructor({
@@ -23,6 +25,15 @@ class App {
       content: this._content,
       hero: this._hero,
     });
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  async renderPage() {
+    const url = UrlParser.parseActiveUrlWithCombiner();
+    console.log(url);
+    const page = routes[url];
+    this._content.innerHTML = await page.render();
+    await page.afterRender();
   }
 }
 
