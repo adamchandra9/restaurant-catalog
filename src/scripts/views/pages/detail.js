@@ -20,7 +20,6 @@ const Detail = {
     this.renderCategories(restaurant.restaurant);
     this.renderMenus(restaurant.restaurant);
     this.renderReviews(restaurant.restaurant);
-    console.log(restaurant.restaurant);
     // after render
   },
 
