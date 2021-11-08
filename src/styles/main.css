@@ -28,6 +28,12 @@ html {
 .skip-link:focus {
   top: 0;
 }
+
+/*
+   Header
+*/
+
+
 .header {
   width: 100%;
   background-color: #03031c;
@@ -80,6 +86,11 @@ nav a {
   font-size: 18px;
   padding: 16px;
 }
+
+/*
+   Hero
+*/
+
 .hero {
   display: flex;
   align-items: center;
@@ -103,6 +114,11 @@ nav a {
   color: #ffffff;
   font-size: 16px;
 }
+
+/*
+   Main
+*/
+
 main {
   padding: 24px;
   width: 100%;
@@ -112,6 +128,11 @@ main h1 {
   text-align: center;
   margin-bottom: 24px;
 }
+
+/*
+   Footer
+*/
+
 footer {
   background-color: #02021c;
   text-align: center;
@@ -119,7 +140,12 @@ footer {
   font-size: 14px;
   padding: 16px 0;
 }
-#content {
+
+/*
+   Detail Restaurant
+*/
+
+#restaurant {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
@@ -152,6 +178,27 @@ footer {
   margin-bottom: 16px;
   margin-top: 16px;
   border-radius: 5px;
+}
+
+/*
+   Like
+*/
+
+.like {
+  font-size: 18px;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background-color: #db0000;
+  color: white;
+  border: 0;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (min-width: 600px) {
@@ -189,15 +236,15 @@ footer {
   main h1 {
     font-size: 32px;
   }
-  #content {
+  #restaurant {
     grid-template-columns: auto 1fr;
   }
-  #content .restaurant_title,
-  #content .restaurant_description {
+  #restaurant .restaurant_title,
+  #restaurant .restaurant_description {
     grid-column-start: 1;
     grid-column-end: 3;
   }
-  #content .restaurant_info {
+  #restaurant .restaurant_info {
     padding: 16px;
   }
 }
@@ -218,7 +265,7 @@ footer {
   .hero {
     min-width: 1000px;
   }
-  #content{
+  #restaurant{
     padding: 16px;
   }
   .restaurant_poster{
