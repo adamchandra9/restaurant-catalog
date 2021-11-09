@@ -55,6 +55,7 @@ class RestoItem extends HTMLElement {
       margin-bottom: 8px;
     }
     .restaurant_item_title a {
+      padding: 8px 0;
       text-decoration: none;
       color: #424242;
     }

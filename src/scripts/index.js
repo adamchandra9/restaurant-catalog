@@ -13,6 +13,12 @@ const app = new App({
   hero: document.querySelector('.hero'),
 });
 
+const skipToContent = document.querySelector('.skip-link');
+skipToContent.addEventListener('click', (event) => {
+  event.preventDefault();
+  document.querySelector('#maincontent').focus();
+});
+
 window.addEventListener('hashchange', () => {
   app.renderPage();
 });
